@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: design-file-app
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    plan: free

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Design File Filter</title>
+</head>
+<body>
+    <h2>Upload ZIP of Source Files</h2>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="zip_file" accept=".zip" required>
+        <button type="submit">Process Files</button>
+    </form>
+
+    {% if copied %}
+        <p><strong>{{ copied }} matching files found.</strong></p>
+        <a href="/download">Download Filtered Files</a>
+    {% endif %}
+
+    {% if error %}
+        <p style="color:red">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
